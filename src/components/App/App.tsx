@@ -17,18 +17,22 @@ import { Modal, Query } from "./App.types";
 ReactModal.setAppElement("#root");
 
 export default function App() {
-  const [photos, setPhotos] = useState<ITransformData[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+const [photos, setPhotos] = useState<ITransformData[]>([]);
 
-  const [showModal, setShowModal] = useState<Modal>({
-    isOpen: false,
-    photo: null,
-  });
+const [loading, setLoading] = useState<boolean>(false);
 
-  const [query, setQuery] = useState<string | null>(null);
-  const [page, setPage] = useState(1);
+const [error, setError] = useState<boolean>(false);
 
+const [showModal, setShowModal] = useState<Modal>({
+  isOpen: false,
+  photo: null,
+});
+
+
+const [query, setQuery] = useState<string | null>(null);
+
+const [page, setPage] = useState<number>(1);
+  
   const updateQuery = (queryString: string | null): void => {
     setPage(1);
     setQuery(queryString);

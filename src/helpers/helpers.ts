@@ -7,8 +7,8 @@ export interface ITransformData {
   fullImg: string;
   author: string;
   created_at: string;
-  //total_pages: number;
-}
+  url?: string;
+} 
 
 export interface UnsplashPhoto {
   id: string;
